@@ -12,7 +12,6 @@ metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---
 
-
 import Logo from '~/components/Logo.astro';
 
 import { YouTube, Tweet, Vimeo, LinkPreview } from 'astro-embed';
@@ -21,9 +20,7 @@ import Image from '~/components/common/Image.astro';
 import ImageGrid from '~/components/common/ImageGrid.astro';
 import VideoGrid from '~/components/common/VideoGrid.astro';
 
-export const pierna_imgs = [
-  { src: "~/assets/images/pierna.gif", alt: "pierna img" },
-];
+export const pierna_imgs = [{ src: '~/assets/images/pierna.gif', alt: 'pierna img' }];
 
 Here are some projects that I like that I did in college as class projects.
 
@@ -37,15 +34,16 @@ I started by detecting strong line features in each frame using Canny edge detec
 
 On top of that, I used a custom-trained YOLOv8 model to detect the chickens in each frame. For each detection, I computed the midpoint of the bounding box and mapped it to the closest region of the dynamic grid, estimating their real-world position relative to the scene.
 
-<YouTube id="VTTA3oH9ZdY"/>
-
+<YouTube id="VTTA3oH9ZdY" />
 
 ## Follower Drone
+
 For this quick class mini-project I interfaced (in Python) the DJI’s Tello mini drone, and used its camera to follow and go through an obstacle on our school’s Multi-Robot Systems Laboratory.
 
-<YouTube id="TxxTtl8oRIY"/>
+<YouTube id="TxxTtl8oRIY" />
 
 ## Cable driven leg mechanism
+
 Quick class mini-project assignment where I designed and 3D printed a leg mechanism inspired in MABEL from the University of Michigan.
 
 <ImageGrid images={pierna_imgs} columns="1" />
@@ -56,7 +54,7 @@ Quick class mini-project assignment where I designed and 3D printed a leg mechan
 
 Group class project for the "System-on-Chip Design" class using a NUCLEO-STM32 board with a FreeRTOS implementation. Valve pressure and flow data from sensors was transmitted via UART to another device for display, and valve opening and closing with relays and timers.
 
-<YouTube id="3K7WqnNK0ug"/>
+<YouTube id="3K7WqnNK0ug" />
 
 ## GUI for the management of the products and inventory of a business in Veracruz, México (2021)
 
@@ -64,4 +62,4 @@ Group class project for the "System-on-Chip Design" class using a NUCLEO-STM32 b
 
 High School IB Computer Science Higher Level project using object-oriented programming in Java.
 
-<YouTube id="4M8eakH_tAY"/>
+<YouTube id="4M8eakH_tAY" />

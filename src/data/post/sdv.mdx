@@ -20,7 +20,6 @@ metadata:
   canonical: https://astrowind.vercel.app/get-started-website-with-astro-tailwind-css
 ---
 
-
 import Logo from '~/components/Logo.astro';
 
 import { YouTube, Tweet, Vimeo, LinkPreview } from 'astro-embed';
@@ -29,41 +28,34 @@ import Image from '~/components/common/Image.astro';
 import ImageGrid from '~/components/common/ImageGrid.astro';
 import VideoGrid from '~/components/common/VideoGrid.astro';
 
-export const finsa_imgs0 = [
-  { src: "~/assets/images/finsa4.jpg", alt: "finsa img" },
-];
+export const finsa_imgs0 = [{ src: '~/assets/images/finsa4.jpg', alt: 'finsa img' }];
 
 export const finsa_imgs1 = [
-  { src: "~/assets/images/finsa1.jpg", alt: "finsa img" },
-  { src: "~/assets/images/finsa2.jpg", alt: "finsa img" },
+  { src: '~/assets/images/finsa1.jpg', alt: 'finsa img' },
+  { src: '~/assets/images/finsa2.jpg', alt: 'finsa img' },
 ];
 
 export const finsa_imgs2 = [
-  { src: "~/assets/images/finsa5.jpg", alt: "finsa img" },
-  { src: "~/assets/images/finsa6.jpg", alt: "finsa img" },
+  { src: '~/assets/images/finsa5.jpg', alt: 'finsa img' },
+  { src: '~/assets/images/finsa6.jpg', alt: 'finsa img' },
 ];
 
 export const sdv_demos = [
-  { src: "~/assets/images/sdv_gz.png", alt: "sdv" },
-  { src: "~/assets/images/sdv_gz2.png", alt: "sdv" }
+  { src: '~/assets/images/sdv_gz.png', alt: 'sdv' },
+  { src: '~/assets/images/sdv_gz2.png', alt: 'sdv' },
 ];
 
-export const sdv_demos2 = [
-  { src: "~/assets/images/sdv_control.png", alt: "sdv" },
-];
+export const sdv_demos2 = [{ src: '~/assets/images/sdv_control.png', alt: 'sdv' }];
 
-export const sdv_vids = [
-  { id: "F9pTx4xK49E" },
-  { id: "zyNIx1Jv9sY" }
-];
+export const sdv_vids = [{ id: 'F9pTx4xK49E' }, { id: 'zyNIx1Jv9sY' }];
 
 This is my other favorite project that I got to work on after classes at my robotics student group in college: A self driving golf cart meant to give autonomous rides to tourists on campus, and provide an interactive and unique experience of our university. This is the biggest and most challenging project I’ve worked on, strictly working in the software area, where I implemented some controllers, and mainly worked on the integration of several ROS 2 nodes related to the perception, electronics, and localization areas, preparation for testing on Gazebo Sim, and safety functionalities.
 
-<YouTube id="euo4-gcYWNU"/>
+<YouTube id="euo4-gcYWNU" />
 
 ###
 
-<VideoGrid videos={sdv_vids} columns="2"/>
+<VideoGrid videos={sdv_vids} columns="2" />
 <ImageGrid images={sdv_demos} columns="2" />
 <ImageGrid images={sdv_demos2} columns="1" />
 

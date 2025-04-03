@@ -52,7 +52,13 @@ export const headerData = {
       href: 'https://github.com/MaxPacheco02',
     },
   ],
-  actions: [{ text: 'Get Resume', href: 'https://drive.google.com/file/d/1ylTKTl10kE73I4SJdgLyw221D5YQoDaB/view?usp=sharing', target: '_blank' }],
+  actions: [
+    {
+      text: 'Get Resume',
+      href: 'https://drive.google.com/file/d/1ylTKTl10kE73I4SJdgLyw221D5YQoDaB/view?usp=sharing',
+      target: '_blank',
+    },
+  ],
 };
 
 export const footerData = {

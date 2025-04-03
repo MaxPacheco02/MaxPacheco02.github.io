@@ -17,12 +17,7 @@ export interface Props {
   containerClass?: string; // Additional class for the container
 }
 
-const { 
-  videos, 
-  columns = 3, 
-  gap = '6', 
-  containerClass = ''
-} = Astro.props;
+const { videos, columns = 3, gap = '6', containerClass = '' } = Astro.props;
 
 // Determine grid columns based on the columns prop
 const mdCols = columns > 1 ? 2 : 1;
@@ -33,18 +28,20 @@ const gridClass = `grid gap-${gap} row-gap-5 md:grid-cols-${mdCols} lg:grid-cols
 ---
 
 <div class={gridClass}>
-  {videos.map((video) => (
-    <div class="grid-item">
-      <YouTube 
-        id={video.id} 
-        title={video.title} 
-        poster={video.poster}
-        posterQuality={video.posterQuality}
-        params={video.params}
-        playlabel={video.playlabel}
-      />
-    </div>
-  ))}
+  {
+    videos.map((video) => (
+      <div class="grid-item">
+        <YouTube
+          id={video.id}
+          title={video.title}
+          poster={video.poster}
+          posterQuality={video.posterQuality}
+          params={video.params}
+          playlabel={video.playlabel}
+        />
+      </div>
+    ))
+  }
 </div>
 
 <style>

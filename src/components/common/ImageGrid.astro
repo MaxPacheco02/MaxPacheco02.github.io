@@ -10,13 +10,7 @@ export interface Props {
   imageClass?: string; // Additional class for individual images
 }
 
-const { 
-  images, 
-  columns = 3, 
-  gap = '6', 
-  containerClass = '', 
-  imageClass = '' 
-} = Astro.props;
+const { images, columns = 3, gap = '6', containerClass = '', imageClass = '' } = Astro.props;
 
 // Determine grid columns based on the columns prop
 const mdCols = columns > 1 ? 2 : 1;
@@ -27,11 +21,13 @@ const gridClass = `grid gap-${gap} row-gap-5 md:grid-cols-${mdCols} lg:grid-cols
 ---
 
 <div class={gridClass}>
-  {images.map((image) => (
-    <div class="grid-item">
-      <Image {...image} class={`w-full ${imageClass}`} />
-    </div>
-  ))}
+  {
+    images.map((image) => (
+      <div class="grid-item">
+        <Image {...image} class={`w-full ${imageClass}`} />
+      </div>
+    ))
+  }
 </div>
 
 <style>
