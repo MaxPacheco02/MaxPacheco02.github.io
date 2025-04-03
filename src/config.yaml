@@ -1,6 +1,6 @@
 site:
   name: Max Pacheco Portfolio
-  site: 'https://astrowind.vercel.app'
+  site: 'https://MaxPacheco02.github.io'
   base: '/'
   trailingSlash: false
 
@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: AstroWind
     images:
-      - url: '~/assets/images/max1.png'
+      - url: '~/assets/images/max_polo.jpg'
         width: 1200
         height: 628
     type: website
