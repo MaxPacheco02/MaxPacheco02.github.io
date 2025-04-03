@@ -105,7 +105,7 @@ const load = async function (): Promise<Array<Post>> {
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
-    .sort((a, b) => b.id.localeCompare(a.id))
+    .sort((a, b) => a.id.localeCompare(b.id))
     .filter((post) => !post.draft);
 
   return results;

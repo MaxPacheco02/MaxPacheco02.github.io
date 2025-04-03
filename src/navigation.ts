@@ -55,7 +55,7 @@ export const headerData = {
   actions: [
     {
       text: 'Get Resume',
-      href: 'https://drive.google.com/file/d/1ylTKTl10kE73I4SJdgLyw221D5YQoDaB/view?usp=sharing',
+      href: 'https://tecmx-my.sharepoint.com/:b:/g/personal/a01552369_tec_mx/EQBZqZtATIJBio-kc_OzUDgBvzQzgpuwmkP0whBbIms7MA?e=7KRnjy',
       target: '_blank',
     },
   ],
