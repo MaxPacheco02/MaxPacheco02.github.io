@@ -15,15 +15,15 @@ export const headerData = {
         },
         {
           text: 'USV',
-          href: getPermalink('usv', 'post'),
+          href: getPermalink('a_usv', 'post'),
         },
         {
           text: 'SDV',
-          href: getPermalink('sdv', 'post'),
+          href: getPermalink('d_sdv', 'post'),
         },
         {
           text: 'Puzzlebot',
-          href: getPermalink('puzzlebot', 'post'),
+          href: getPermalink('g_puzzlebot', 'post'),
         },
         // {
         //   text: 'Dexterous Manipulation',
