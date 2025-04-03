@@ -9,11 +9,13 @@ const generatePermalink = async ({
   id,
   slug,
   publishDate,
+  updateDate,
   category,
 }: {
   id: string;
   slug: string;
   publishDate: Date;
+  updateDate: Date;
   category: string | undefined;
 }) => {
   const year = String(publishDate.getFullYear()).padStart(4, '0');
@@ -46,7 +48,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
   const {
     publishDate: rawPublishDate = new Date(),
-    updateDate: rawUpdateDate,
+    updateDate: rawUpdateDate = new Date(),
     title,
     excerpt,
     image,
@@ -59,7 +61,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
   const slug = cleanSlug(id); // cleanSlug(rawSlug.split('/').pop());
   const publishDate = new Date(rawPublishDate);
-  const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
+  const updateDate = new Date(rawUpdateDate);
 
   const category = rawCategory
     ? {
@@ -76,7 +78,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   return {
     id: id,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
+    permalink: await generatePermalink({ id, slug, publishDate, updateDate, category: category?.slug }),
 
     publishDate: publishDate,
     updateDate: updateDate,
