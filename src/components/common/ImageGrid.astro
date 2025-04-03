@@ -1,0 +1,44 @@
+---
+import Image from '~/components/common/Image.astro';
+import type { ImageProps } from '~/utils/images-optimization';
+
+export interface Props {
+  images: Array<ImageProps>;
+  columns?: number; // Default number of columns for different breakpoints
+  gap?: string; // Gap between grid items
+  containerClass?: string; // Additional class for the container
+  imageClass?: string; // Additional class for individual images
+}
+
+const { 
+  images, 
+  columns = 3, 
+  gap = '6', 
+  containerClass = '', 
+  imageClass = '' 
+} = Astro.props;
+
+// Determine grid columns based on the columns prop
+const mdCols = columns > 1 ? 2 : 1;
+const lgCols = columns > 2 ? columns : columns > 1 ? 2 : 1;
+
+// Generate grid class
+const gridClass = `grid gap-${gap} row-gap-5 md:grid-cols-${mdCols} lg:grid-cols-${lgCols} ${containerClass}`;
+---
+
+<div class={gridClass}>
+  {images.map((image) => (
+    <div class="grid-item">
+      <Image {...image} class={`w-full ${imageClass}`} />
+    </div>
+  ))}
+</div>
+
+<style>
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+</style>

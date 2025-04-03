@@ -1,0 +1,55 @@
+---
+import { YouTube, Tweet, Vimeo } from 'astro-embed';
+
+export interface YouTubeItem {
+  id: string;
+  title?: string;
+  poster?: string;
+  posterQuality?: 'max' | 'high' | 'default' | 'low';
+  params?: string;
+  playlabel?: string;
+}
+
+export interface Props {
+  videos: Array<YouTubeItem>;
+  columns?: number; // Default number of columns for different breakpoints
+  gap?: string; // Gap between grid items
+  containerClass?: string; // Additional class for the container
+}
+
+const { 
+  videos, 
+  columns = 3, 
+  gap = '6', 
+  containerClass = ''
+} = Astro.props;
+
+// Determine grid columns based on the columns prop
+const mdCols = columns > 1 ? 2 : 1;
+const lgCols = columns > 2 ? columns : columns > 1 ? 2 : 1;
+
+// Generate grid class
+const gridClass = `grid gap-${gap} row-gap-5 md:grid-cols-${mdCols} lg:grid-cols-${lgCols} ${containerClass}`;
+---
+
+<div class={gridClass}>
+  {videos.map((video) => (
+    <div class="grid-item">
+      <YouTube 
+        id={video.id} 
+        title={video.title} 
+        poster={video.poster}
+        posterQuality={video.posterQuality}
+        params={video.params}
+        playlabel={video.playlabel}
+      />
+    </div>
+  ))}
+</div>
+
+<style>
+  .grid-item {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+</style>

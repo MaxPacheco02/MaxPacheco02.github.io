@@ -64,5 +64,17 @@
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.1",
     "unist-util-visit": "^5.0.0"
-  }
+  },
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxPacheco02/MaxPacheco02.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxPacheco02/MaxPacheco02.github.io/issues"
+  },
+  "homepage": "https://github.com/MaxPacheco02/MaxPacheco02.github.io#readme"
 }

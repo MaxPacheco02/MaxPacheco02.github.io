@@ -1,9 +1,14 @@
 ---
-import { SITE } from 'astrowind:config';
+import Image from '~/components/common/Image.astro';
+
+const roboticHandImgBright = '~/assets/images/robotic-hand-purple.svg';
+const roboticHandImgDark = '~/assets/images/robotic-hand.png';
 ---
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  🚀 {SITE?.name}
+<Image src={roboticHandImgBright} alt="Arm Image" width={40} class="inline-block dark:hidden align-middle mr-2" />
+<Image src={roboticHandImgDark} alt="Arm Image" width={40} class="hidden dark:inline-block align-middle mr-2" />
+Max Pacheco
 </span>

@@ -14,7 +14,7 @@ export interface Post {
   /**  */
   publishDate: Date;
   /**  */
-  updateDate?: Date;
+  updateDate: Date;
 
   /**  */
   title: string;
