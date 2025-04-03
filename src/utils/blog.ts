@@ -9,13 +9,11 @@ const generatePermalink = async ({
   id,
   slug,
   publishDate,
-  updateDate,
   category,
 }: {
   id: string;
   slug: string;
   publishDate: Date;
-  updateDate: Date;
   category: string | undefined;
 }) => {
   const year = String(publishDate.getFullYear()).padStart(4, '0');
@@ -78,7 +76,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
   return {
     id: id,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, updateDate, category: category?.slug }),
+    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
 
     publishDate: publishDate,
     updateDate: updateDate,
@@ -107,7 +105,7 @@ const load = async function (): Promise<Array<Post>> {
   const normalizedPosts = posts.map(async (post) => await getNormalizedPost(post));
 
   const results = (await Promise.all(normalizedPosts))
-    .sort((a, b) => b.id - a.id)
+    .sort((a, b) => b.id.localeCompare(a.id))
     .filter((post) => !post.draft);
 
   return results;
